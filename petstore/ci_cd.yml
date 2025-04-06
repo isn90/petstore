@@ -1,9 +1,9 @@
 name: CI/CD to Azure Container Registry
 
 env:
-  AZURE_CONTAINER_REGISTRY: acrtestmycontainerregistry.azurecr.io
-  AZURE_CONTAINER_REGISTRY_USERNAME: acrtestmycontainerregistry
-  IMAGE_NAME: webapp
+  AZURE_CONTAINER_REGISTRY: demopetstorecriyer.azurecr.io
+  AZURE_CONTAINER_REGISTRY_USERNAME: demopetstorecriyer
+  IMAGE_NAME: petstore
 
 on:
   push:
