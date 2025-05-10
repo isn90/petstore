@@ -38,6 +38,7 @@ jobs:
         for APP in $IMAGE_NAMES; do
           echo "===== Processing $APP ====="
           echo $APP
+          echo pwd
           cd ../../petstore
           cd $APP
 
