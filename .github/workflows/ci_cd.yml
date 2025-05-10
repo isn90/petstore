@@ -39,8 +39,6 @@ jobs:
         for APP in $IMAGE_NAMES; do
           echo "===== Processing $APP ====="
           echo "Maven package..."
-          mvn clean package -DskipTests
-
           echo "Docker build..."
           docker build -t $AZURE_CONTAINER_REGISTRY/$APP:latest .
 
