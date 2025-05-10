@@ -36,9 +36,14 @@ jobs:
       working-directory: ../../petstore
       run: |
         pwd
+        cd petstore # Move into the petstore directory where services reside
         for APP in $IMAGE_NAMES; do
           echo "===== Processing $APP ====="
+          echo $APP
+          
           echo "Maven package..."
+          mvn clean package -DskipTests
+
           echo "Docker build..."
           docker build -t $AZURE_CONTAINER_REGISTRY/$APP:latest .
 
