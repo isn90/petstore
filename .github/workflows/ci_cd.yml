@@ -33,10 +33,8 @@ jobs:
         password: ${{ secrets.PET_STORE_SECRET }}
 
     - name: Build, Push & Deploy each Spring Boot Docker App
-      working-directory: ../../petstore
       run: |
         pwd
-        cd petstore # Move into the petstore directory where services reside
         for APP in $IMAGE_NAMES; do
           echo "===== Processing $APP ====="
           echo $APP
