@@ -35,6 +35,7 @@ jobs:
     - name: Build, Push & Deploy each Spring Boot Docker App
       run: |
         pwd
+        cd "$GITHUB_WORKSPACE/petstore"
         for APP in $IMAGE_NAMES; do
           echo "===== Processing $APP ====="
           echo $APP
