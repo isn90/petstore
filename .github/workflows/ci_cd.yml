@@ -3,7 +3,7 @@ name: CI/CD to Azure Container Apps via ACR
 env:
   AZURE_CONTAINER_REGISTRY: demopetstorecriyer.azurecr.io
   AZURE_CONTAINER_REGISTRY_USERNAME: demopetstorecriyer
-  IMAGE_NAMES: petstore petstoreorderservice petstorepetservice petstoreproductservice
+  IMAGE_NAMES: petstoreapp petstoreorderservice petstorepetservice petstoreproductservice
   RESOURCE_GROUP: demo-rg
   #CONTAINER_APPS_ENV: demo-petstore-env
 
@@ -33,6 +33,7 @@ jobs:
         password: ${{ secrets.PET_STORE_SECRET }}
 
     - name: Build, Push & Deploy each Spring Boot Docker App
+      working-directory: ../../petstore
       run: |
         for APP in $IMAGE_NAMES; do
           echo "===== Processing $APP ====="
