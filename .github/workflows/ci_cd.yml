@@ -35,10 +35,10 @@ jobs:
     - name: Build, Push & Deploy each Spring Boot Docker App
       working-directory: ../../petstore
       run: |
+        pwd
         for APP in $IMAGE_NAMES; do
           echo "===== Processing $APP ====="
           echo $APP
-          echo pwd
           cd ../../petstore
           cd $APP
 
