@@ -38,7 +38,7 @@ jobs:
         for APP in $IMAGE_NAMES; do
           echo "===== Processing $APP ====="
           echo $APP
-          cd $APP
+          cd ../../petstore/$APP
 
           echo "Maven package..."
           mvn clean package -DskipTests
