@@ -15,7 +15,7 @@ FROM eclipse-temurin:17-jdk
 
 # Install curl and download the AI agent
 RUN apt-get update && apt-get install -y curl \
-  && curl -Lo applicationinsights-agent.jar https://github.com/microsoft/ApplicationInsights-Java/releases/latest/download/applicationinsights-agent.jar
+  && curl -Lo applicationinsights-agent.jar https://github.com/microsoft/ApplicationInsights-Java/releases/latest/download/applicationinsights-agent-3.4.13.jar
 
 # Create app directory
 WORKDIR /app
@@ -24,7 +24,7 @@ WORKDIR /app
 COPY target/*.jar app.jar
 
 # Copy the AI agent into the container
-COPY applicationinsights-agent.jar .
+COPY applicationinsights-agent-3.4.13.jar .
 
 # Use APPINSIGHTS_CONNECTION_STRING from environment variable
 ENV APPLICATIONINSIGHTS_CONNECTION_STRING=${APPINSIGHTS_CONNECTION_STRING}
