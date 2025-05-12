@@ -36,6 +36,7 @@ import com.chtrembl.petstoreapp.service.PetStoreService;
 import com.chtrembl.petstoreapp.service.SearchService;
 import com.microsoft.applicationinsights.telemetry.PageViewTelemetry;
 import com.nimbusds.jose.shaded.json.JSONArray;
+import com.chtrembl.petstoreapp.service.TelemetryLogger;
 
 /**
  * Web Controller for all of the model/presentation construction and various
