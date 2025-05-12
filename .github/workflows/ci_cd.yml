@@ -45,17 +45,10 @@ jobs:
           mvn clean package -DskipTests
 
           echo "Docker build..."
-          docker build -t $AZURE_CONTAINER_REGISTRY/$APP:latest .
+          docker build -t $AZURE_CONTAINER_REGISTRY/$APP:v2 .
 
           echo "Docker push..."
-          docker push $AZURE_CONTAINER_REGISTRY/$APP:latest
-
-          echo "Deploying to Azure Container App: $APP"
-          az containerapp update \
-            --name $APP \
-            --resource-group $RESOURCE_GROUP \
-            --image $AZURE_CONTAINER_REGISTRY/$APP:latest
-            --environment $CONTAINER_APPS_ENV
+          docker push $AZURE_CONTAINER_REGISTRY/$APP:v2
 
           cd ..
         done
