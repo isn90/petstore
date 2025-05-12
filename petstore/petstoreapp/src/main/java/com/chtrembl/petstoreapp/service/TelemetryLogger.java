@@ -1,3 +1,5 @@
+package com.chtrembl.petstoreapp.service;
+
 import com.microsoft.applicationinsights.TelemetryClient;
 import com.microsoft.applicationinsights.telemetry.*;
 import org.slf4j.Logger;
