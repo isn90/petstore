@@ -399,3 +399,6 @@ data:
         - id: 2
           name: "small"
       status: "available"
+azure:
+  application-insights:
+    connection-string: InstrumentationKey=e526f19c-54fc-4a5d-ae6f-0036ff702711;IngestionEndpoint=https://eastus-8.in.applicationinsights.azure.com/;LiveEndpoint=https://eastus.livediagnostics.monitor.azure.com/;ApplicationId=5d57ddf6-cc5f-410a-b491-f8af806a305c
