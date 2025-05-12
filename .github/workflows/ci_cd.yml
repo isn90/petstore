@@ -5,7 +5,7 @@ env:
   AZURE_CONTAINER_REGISTRY_USERNAME: demopetstorecriyer
   IMAGE_NAMES: petstoreapp petstoreorderservice petstorepetservice petstoreproductservice
   RESOURCE_GROUP: demo-rg
-  #CONTAINER_APPS_ENV: demo-petstore-env
+  CONTAINER_APPS_ENV: petstore-container-app-env
 
 on:
   push:
