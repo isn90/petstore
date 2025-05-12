@@ -6,6 +6,7 @@ env:
   IMAGE_NAMES: petstoreapp petstoreorderservice petstorepetservice petstoreproductservice
   RESOURCE_GROUP: demo-rg
   CONTAINER_APPS_ENV: petstore-container-app-env
+  APPINSIGHTS_CONNECTION_STRING: ${{ secrets.APPINSIGHTS_CONNECTION_STRING }}
 
 on:
   push:
@@ -45,10 +46,10 @@ jobs:
           mvn clean package -DskipTests
 
           echo "Docker build..."
-          docker build -t $AZURE_CONTAINER_REGISTRY/$APP:v2 .
+          docker build -t $AZURE_CONTAINER_REGISTRY/$APP:latest .
 
           echo "Docker push..."
-          docker push $AZURE_CONTAINER_REGISTRY/$APP:v2
+          docker push $AZURE_CONTAINER_REGISTRY/$APP:latest
 
           cd ..
         done
