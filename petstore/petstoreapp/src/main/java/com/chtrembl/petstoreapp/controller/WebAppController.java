@@ -144,7 +144,8 @@ public class WebAppController {
 			return "home";
 		}
 		logger.info(String.format("PetStoreApp /breeds requested for %s, routing to breeds view...", category));
-
+		TelemetryLogger.info("Logger info");
+		TelemetryLogger.error("error");
 		model.addAttribute("pets", this.petStoreService.getPets(category));
 		return "breeds";
 	}
