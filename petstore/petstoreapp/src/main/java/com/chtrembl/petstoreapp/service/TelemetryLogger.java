@@ -16,7 +16,7 @@ public class TelemetryLogger {
     private static TelemetryClient telemetryClient = new TelemetryClient();
 
     static {
-        telemetryClient.getContext().setInstrumentationKey(System.getenv("e526f19c-54fc-4a5d-ae6f-0036ff702711"));
+        telemetryClient.getContext().setInstrumentationKey(System.getenv("a29a3488-73bc-4aae-afeb-b791f5e3c076"));
     }
 
     private static Map<String,SeverityLevel>  logLevelToSeverityLevelMap = new HashMap<>(){{
