@@ -22,10 +22,10 @@ WORKDIR /app
 COPY target/*.jar app.jar
 
 # Copy Application Insights agent from local folder
-COPY agent/applicationinsights-agent-3.7.2.jar /app/applicationinsights-agent.jar
+#COPY agent/applicationinsights-agent-3.7.2.jar /app/applicationinsights-agent.jar
 
 # Use APPINSIGHTS_CONNECTION_STRING from environment variable
 #ENV APPLICATIONINSIGHTS_CONNECTION_STRING="InstrumentationKey=a29a3488-73bc-4aae-afeb-b791f5e3c076;IngestionEndpoint=https://eastus-8.in.applicationinsights.azure.com/;LiveEndpoint=https://eastus.livediagnostics.monitor.azure.com/;ApplicationId=7e1f2d43-10ea-49a4-a58e-830bedfa57bf"
 
 # Run the app with AI agent
-ENTRYPOINT ["java", "-javaagent:/app/applicationinsights-agent.jar", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
