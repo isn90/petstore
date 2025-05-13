@@ -138,9 +138,6 @@ public class PetStoreServiceImpl implements PetStoreService {
 			// to show Telemetry with APIM requests (normally this would be cached in a real
 			// world production scenario)
 			this.sessionUser.setProducts(products);
-			if(throwError) {
-				throw new Exception("Cannot move further");
-			}
 			// filter this specific request per category
 			if (tags.stream().anyMatch(t -> t.getName().equals("large"))) {
 				products = products.stream().filter(product -> category.equals(product.getCategory().getName())
@@ -150,6 +147,7 @@ public class PetStoreServiceImpl implements PetStoreService {
 				products = products.stream().filter(product -> category.equals(product.getCategory().getName())
 						&& product.getTags().toString().contains("small")).collect(Collectors.toList());
 			}
+			TelemetryLogger.info("No of products=" + products.size());
 			return products;
 		} catch (WebClientException wce) {
 			// little hack to visually show the error message within our Azure Pet Store
