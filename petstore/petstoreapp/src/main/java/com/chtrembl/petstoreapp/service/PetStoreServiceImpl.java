@@ -160,7 +160,7 @@ public class PetStoreServiceImpl implements PetStoreService {
 			product.setCategory(new Category());
 			product.setId((long) 0);
 			products.add(product);
-		} catch (Exception | IllegalArgumentException iae) {
+		} catch (Exception iae) {
 			// little hack to visually show the error message within our Azure Pet Store
 			// Reference Guide (Academic Tutorial)
 			Product product = new Product();
