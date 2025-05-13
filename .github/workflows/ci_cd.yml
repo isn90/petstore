@@ -47,8 +47,10 @@ jobs:
           echo "Maven package..."
           mvn clean package -DskipTests
 
-          echo "Docker build..."
-          docker build -t $AZURE_CONTAINER_REGISTRY/$APP:latest .
+          echo "Docker build with Application Insights agent..."
+          docker build \
+            --build-arg APPINSIGHTS_CONNECTION_STRING="${{ secrets.APPINSIGHTS_CONNECTION_STRING }}" \
+            -t $AZURE_CONTAINER_REGISTRY/$APP:latest .
 
           echo "Docker push..."
           docker push $AZURE_CONTAINER_REGISTRY/$APP:latest
