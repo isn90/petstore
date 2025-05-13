@@ -37,7 +37,8 @@ jobs:
       run: |
         pwd
         cd "$GITHUB_WORKSPACE/petstore"
-        echo "application insights connection string" ${{ secrets.APPINSIGHTS_CONNECTION_STRING }}
+        echo "application insights connection string...." 
+        echo "${{ secrets.APPINSIGHTS_CONNECTION_STRING }}"
         for APP in $IMAGE_NAMES; do
           echo "===== Processing $APP ====="
           echo $APP
