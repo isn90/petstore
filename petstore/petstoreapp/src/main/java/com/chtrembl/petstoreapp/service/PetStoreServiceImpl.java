@@ -151,9 +151,7 @@ public class PetStoreServiceImpl implements PetStoreService {
 						&& product.getTags().toString().contains("small")).collect(Collectors.toList());
 			}
 			return products;
-		} catch (
-
-		WebClientException wce) {
+		} catch (WebClientException wce) {
 			// little hack to visually show the error message within our Azure Pet Store
 			// Reference Guide (Academic Tutorial)
 			Product product = new Product();
@@ -162,7 +160,7 @@ public class PetStoreServiceImpl implements PetStoreService {
 			product.setCategory(new Category());
 			product.setId((long) 0);
 			products.add(product);
-		} catch (IllegalArgumentException iae) {
+		} catch (Exception | IllegalArgumentException iae) {
 			// little hack to visually show the error message within our Azure Pet Store
 			// Reference Guide (Academic Tutorial)
 			Product product = new Product();
