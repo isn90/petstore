@@ -174,7 +174,7 @@ public class PetStoreServiceImpl implements PetStoreService {
 
 			TelemetryLogger.error("Cannot move further");
 			TelemetryLogger.error("petstore.service.url:${PETSTOREPRODUCTSERVICE_URL} needs to be enabled for this service to work"
-							+ iae.getMessage())
+							+ iae.getMessage());
 		}
 		return products;
 	}
