@@ -186,8 +186,8 @@ public class WebAppController {
 	@GetMapping(value = "/products")
 	public String products(Model model, OAuth2AuthenticationToken token, HttpServletRequest request,
 			@RequestParam(name = "category") String category, @RequestParam(name = "id") int id)
-			throws URISyntaxException {
-
+			throws Exception {
+		TelemetryLogger.error("throwing error!!");
 		// quick validation, should really be done in validators, check for cross side
 		// scripting etc....
 		if (!"Toy".equals(category) && !"Food".equals(category)) {
@@ -208,7 +208,8 @@ public class WebAppController {
 
 		model.addAttribute("products",
 				this.petStoreService.getProducts(pet.getCategory().getName() + " " + category, pet.getTags()));
-		return "products";
+		//return "products";
+		throw new Exception("Throwing error");
 	}
 
 	@GetMapping(value = "/cart")
